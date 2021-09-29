@@ -13,7 +13,7 @@ public class Exercicio02 {
         System.out.println("Digite a segunda nota: ");
         nota2 = entrada.nextDouble();
 
-        media = (nota1 * 0.4) + (nota2 * 0.6);
+        media = nota1 * 0.4 + nota2 * 0.6;
 
         System.out.printf("Média do aluno(a): %.2f\n", media);
 
