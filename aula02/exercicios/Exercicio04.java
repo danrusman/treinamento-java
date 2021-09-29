@@ -21,7 +21,7 @@ public class Exercicio04 {
 
         System.out.printf("O valor em quiloWatt em reais é de R$ %.2f\n", valorQuiloWatt);
         System.out.printf("O valor pago é de R$ %.2f\n", valorTotal);
-        System.out.printf("O valor com desconto de 15%% é de R$ %.2f\n", valorDesconto);
+        System.out.printf("O valor com desconto de 15%% é de R$ %.2f\n", valorDesconto);// para printf usar %% duplicado
 
         entrada.close();
     }
