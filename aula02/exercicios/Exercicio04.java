@@ -5,25 +5,24 @@ import java.util.Scanner;
 public class Exercicio04 {
  
     public static void main(String[] args) {
+        double salarioMinimo, valorTotal,valorQuiloWatt, valorDesconto;
+        int qtdQuiloWattConsumido;
+
         Scanner entrada = new Scanner(System.in);
-        double salarioMinimo, quiloWatt, qtdQuiloWatt, valorRealQuiloWatt, valorPago, valorDesconto;
 
         System.out.println("Informe o salário mínimo: ");
         salarioMinimo = entrada.nextDouble();
         System.out.println("Informe a quantidade de quiloWatt: ");
-        qtdQuiloWatt = entrada.nextDouble();
+        qtdQuiloWattConsumido = entrada.nextInt();
 
-        quiloWatt = qtdQuiloWatt * 1 / 500 * salarioMinimo; 
-        valorRealQuiloWatt = quiloWatt;
-        valorPago = salarioMinimo * valorRealQuiloWatt;
-        valorDesconto = valorPago * 0.85;
+        valorQuiloWatt = salarioMinimo / 500;
+        valorTotal = valorQuiloWatt * qtdQuiloWattConsumido;
+        valorDesconto = valorTotal * (1 - 0.15); // ou 0.85
 
-        System.out.println("O valor em quiloWatt em reais é de R$" + valorRealQuiloWatt);
-        System.out.println("O valor pago é de R$" + valorPago);
-        System.out.println("O valor com desconto de 15% é de " + valorDesconto);
+        System.out.printf("O valor em quiloWatt em reais é de R$ %.2f\n", valorQuiloWatt);
+        System.out.printf("O valor pago é de R$ %.2f\n", valorTotal);
+        System.out.printf("O valor com desconto de 15%% é de R$ %.2f\n", valorDesconto);
 
         entrada.close();
-
     }
-
 }
