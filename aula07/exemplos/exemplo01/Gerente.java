@@ -19,4 +19,17 @@ public class Gerente extends Funcionario {
         System.out.println(getNome() + " - " + getSalario() + " - " + numFuncionarios);
     }
 
+    @Override
+    public void aumentoSalario(double porcentagem) {
+        //final int PERCENTUAL_AJUSTE = 20;
+        //salario = getSalario() + salario * PERCENTUAL_AJUSTE;
+        // chama o método da suoerClasse (Funcionaro)
+        super.aumentoSalario(porcentagem + 20);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " - Números Funcionários: "+ numFuncionarios;
+    }
+
 }

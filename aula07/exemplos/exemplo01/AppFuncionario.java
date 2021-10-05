@@ -15,8 +15,14 @@ public class AppFuncionario {
         Gerente g2 = new Gerente("João");
 
 
+        f.aumentoSalario(10);
         f.exibir();
+        g.aumentoSalario(20);
         g.exibir();
         g2.exibir();
+
+
+        System.out.println(f);
+        System.out.println(g);
     }
 }

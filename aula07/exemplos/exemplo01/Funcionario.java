@@ -20,5 +20,14 @@ public class Funcionario {
     public double getSalario() {
         return salario;
     }
-    
+
+    public void aumentoSalario(double porcentagem) {
+        salario = salario + salario * porcentagem / 100;
+    } 
+
+    @Override
+    public String toString() {
+        return nome + ": R$ " + salario;
+    }
+
 }
