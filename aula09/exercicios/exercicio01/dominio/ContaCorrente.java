@@ -1,4 +1,4 @@
-package exercicios.exercicio01;
+package exercicios.exercicio01.dominio;
 
 public class ContaCorrente extends Conta {
     // final = contante, valor que não pode ser alterado

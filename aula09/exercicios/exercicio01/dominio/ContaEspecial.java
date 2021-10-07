@@ -1,4 +1,4 @@
-package exercicios.exercicio01;
+package exercicios.exercicio01.dominio;
 
 public class ContaEspecial extends Conta {
     private double limite;
