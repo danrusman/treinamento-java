@@ -5,7 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity // diz que esta classe vai ser armazenada no BD
 @Table(name = "tb_produto")
@@ -22,6 +26,11 @@ public class Produto {
 
     @Column(name = "valor")
     private double valor;
+
+    @ManyToOne
+    @JoinColumn(name = "cod_fornecedor")
+    @JsonIgnoreProperties("produtos")// não quero a lista de produtos do fornecedor
+    private Fornecedor fornecedor;
 
     public long getCodigo() {
         return codigo;
@@ -40,6 +49,12 @@ public class Produto {
     }
     public void setValor(double valor) {
         this.valor = valor;
+    }
+    public Fornecedor getFornecedor() {
+        return fornecedor;
+    }
+    public void setFornecedor(Fornecedor fornecedor) {
+        this.fornecedor = fornecedor;
     }
 
 }

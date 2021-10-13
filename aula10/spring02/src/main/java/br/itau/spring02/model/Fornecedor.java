@@ -1,11 +1,17 @@
 package br.itau.spring02.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 @Table(name = "tb_fornecedor")
@@ -22,6 +28,9 @@ public class Fornecedor {
     @Column(name = "telefone", length = 15)
     private String telefone;
 
+    @OneToMany(mappedBy = "fornecedor")
+    @JsonIgnoreProperties("fornecedor") // dentro do produto, não quero o atributo "fornecedor"
+    private List<Produto> produtos;
 
     public long getCodigo() {
         return codigo;

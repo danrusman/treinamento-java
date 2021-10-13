@@ -1,5 +1,7 @@
 package br.itau.spring02.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -68,4 +70,18 @@ public class FornecedorController {
         repo.deleteById(codigo);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build(); // OK, mas sem conteúdo no corpo
     }
+
+
+    @GetMapping
+    public List<Fornecedor> listarTodos() {
+        List<Fornecedor> lista = (List<Fornecedor>) repo.findAll();
+        return lista;
+    }
+
+    /*@GetMapping("/todos")
+    public ResponseEntity<List<Fornecedor>> listarTodos() {
+        List<Fornecedor> lista = (List<Fornecedor>) repo.findAll();
+
+        return ResponseEntity.ok(lista);
+    }*/
 }
